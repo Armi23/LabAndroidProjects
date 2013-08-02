@@ -1,6 +1,7 @@
 package com.lab.olveczkylabsignatures;
 
 import android.content.Context;
+
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class SignatureView extends View implements OnTouchListener {
@@ -49,11 +49,7 @@ public class SignatureView extends View implements OnTouchListener {
         data.y = event.getY();
         
         // get time
-        Calendar c = Calendar.getInstance(); 
-        data.second = c.get(Calendar.SECOND);
-        data.hour = c.get(Calendar.HOUR_OF_DAY);        
-        data.minute = c.get(Calendar.MINUTE);
-        data.millisecond = c.get(Calendar.MILLISECOND);
+        data.millisecond = System.currentTimeMillis();
         
         // add compiled data to dataset
         set.add(data);
@@ -77,5 +73,6 @@ public class SignatureView extends View implements OnTouchListener {
 
 //specify custom Data class
 class Data {
-    float x, y, hour, minute, second, millisecond;
+    float x, y;
+    long millisecond;
 }

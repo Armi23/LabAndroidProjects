@@ -16,19 +16,22 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
+    // holds the view of the page    
     SignatureView sView;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sView = new SignatureView(this);
+        
+        // make a new sView, which is blank, and set it as the current view
+        sView = new SignatureView(this); 
         setContentView(sView);
         sView.requestFocus();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu; this adds items to the action bar if it is present. 
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -36,6 +39,7 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()) {
+            // Keep a list of which IDs match which person. Currently limited to 6, (add command to add new person/delete)
             case R.id.Export:
                 return true;
             case R.id.Clear:
@@ -57,25 +61,30 @@ public class MainActivity extends Activity {
         }
     }
     
-    public boolean onExport(String str){
+    // After writing signature and selecting export ID, this function will save the information
+    public boolean onExport(String id){
         // Retrieve dataset
         List<Data> set = sView.set;
 
-        // make file
+        // find/create directory
         String root = Environment.getExternalStorageDirectory().toString();
-        File myDir = new File(root + "/RatSigs/" + str);    
+        File myDir = new File(root + "/RatSigs/" + id);    
         myDir.mkdirs();
         int n = 0;
-        String fname = "Sig-"+ n +".txt";
-        File file = new File (myDir, fname);
         
-        // check if unique and fix if not
-        if (file.exists ()) {
-            for (int i = 0;file.exists (); i++)  {
-                fname = "Sig-"+ i +".txt";
-                file = new File (myDir, fname); 
-            }
+        // initialize values for file
+        String fname;
+        File file;
+                
+        // make sure we have a new file
+        do
+        {
+            fname = "Sig-"+ n +".txt";
+            file = new File (myDir, fname);
+            n++;
         }
+        while (file.exists());
+        
         
         // Show file name and location as a test
         Toast.makeText(MainActivity.this,"Made " + myDir + "/" + fname, Toast.LENGTH_SHORT).show(); 
@@ -95,10 +104,7 @@ public class MainActivity extends Activity {
                     out.write("D:" + i + "\n");
                     out.write("X:" + set.get(i).x  + "\n");
                     out.write("Y:" + set.get(i).y  + "\n");
-                    out.write("H:" + set.get(i).hour + "\n");
-                    out.write("M:" + set.get(i).minute + "\n");
-                    out.write("S:" + set.get(i).second + "\n"); 
-                    out.write("N:" + set.get(i).millisecond + "\n"); 
+                    out.write("T:" + set.get(i).millisecond + "\n"); 
                     out.write("R" + "\n"); 
                 }
                 
