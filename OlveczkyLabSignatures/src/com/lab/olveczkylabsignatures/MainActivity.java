@@ -4,6 +4,7 @@ package com.lab.olveczkylabsignatures;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,6 +57,11 @@ public class MainActivity extends Activity {
                 return onExport("5");
             case R.id.item6:
                 return onExport("6");
+            case R.id.Presenter:
+                // change view to presenter
+                Intent myIntent = new Intent(MainActivity.this, PresenterActivity.class);
+                MainActivity.this.startActivity(myIntent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

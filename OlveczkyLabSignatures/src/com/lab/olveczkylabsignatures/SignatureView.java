@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignatureView extends View implements OnTouchListener {
-    // create data set
+    // create data set to hold info
     List<Data> set = new ArrayList<Data>();
+    
+    // create paint to set styling and path to allow for drawing
     Paint paint = new Paint();
     private Path path;
 
@@ -36,13 +38,15 @@ public class SignatureView extends View implements OnTouchListener {
 
     @Override
     public void onDraw(Canvas canvas) {
+        // draw current path (blank on start)
         canvas.drawPath(path, paint);
+        
+        // draw two starting points 
         canvas.drawPoint(200, 500, paint);
         canvas.drawPoint(200, 100, paint);
     }
 
     public boolean onTouch(View view, MotionEvent event) {
-
         // make point data for collection
         Data data = new Data();
         data.x = event.getX();
@@ -51,7 +55,7 @@ public class SignatureView extends View implements OnTouchListener {
         // get time
         data.millisecond = System.currentTimeMillis();
         
-        // add compiled data to dataset
+        // add compiled data to the set
         set.add(data);
         
         // draw path of signature
