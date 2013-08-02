@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/Export" android:title="@string/export" android:showAsAction="never" android:orderInCategory="100">
+        <menu>
+            <item android:id="@+id/Risa" android:orderInCategory="100" android:title="@string/Risa" android:showAsAction="never"/>
+            <item android:id="@+id/Armi" android:orderInCategory="100" android:title="@string/Armi" android:showAsAction="never"/>
+            <item android:id="@+id/Bence" android:title="@string/Bence" android:orderInCategory="100" android:showAsAction="never"/>
+        </menu>
+    </item>
+    <item android:id="@+id/Clear" android:orderInCategory="100" android:title="@string/Clear" android:showAsAction="never"></item>
+
+</menu>

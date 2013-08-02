@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Draw</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_draw_view">DrawView</string>
+    <string name="export">Export</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_export_screen">ExportScreen</string>
+    <string name="Risa">Risa</string>
+    <string name="Armi">Armi</string>
+    <string name="Clear">Clear</string>
+    <string name="Bence">Bence</string>
+
+</resources>
