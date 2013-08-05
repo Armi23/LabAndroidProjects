@@ -15,6 +15,7 @@
             <item android:id="@+id/item6" android:title="@string/six"/>
         </menu>
     </item>
-    <item android:id="@+id/Presenter" android:title="@string/Presenter"></item>
+    <item android:id="@+id/Presenter" android:title="@string/Presenter" android:orderInCategory="300"></item>
+    <item android:id="@+id/Analysis" android:title="@string/Analysis"></item>
 
 </menu>

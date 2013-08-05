@@ -32,7 +32,6 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present. 
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -59,8 +58,13 @@ public class MainActivity extends Activity {
                 return onExport("6");
             case R.id.Presenter:
                 // change view to presenter
-                Intent myIntent = new Intent(MainActivity.this, PresenterActivity.class);
-                MainActivity.this.startActivity(myIntent);
+                Intent intent = new Intent(MainActivity.this, PresenterActivity.class);
+                MainActivity.this.startActivity(intent);
+                return true;
+            case R.id.Analysis:
+                // change view to analysis page
+                intent = new Intent(MainActivity.this, AnalysisActivity.class);
+                MainActivity.this.startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

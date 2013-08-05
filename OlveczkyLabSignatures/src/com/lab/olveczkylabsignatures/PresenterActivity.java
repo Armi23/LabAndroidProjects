@@ -4,6 +4,7 @@ package com.lab.olveczkylabsignatures;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -51,7 +52,7 @@ public class PresenterActivity extends Activity {
         endMenu.add(0, 500, 0, "Final Signature");
         
         // actually make menu
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.presenter, menu);
         return true;
     }
     
@@ -61,7 +62,19 @@ public class PresenterActivity extends Activity {
         int id = item.getItemId();      
         
         // change directory and reinitialize start point to 0. End point handled in buildSubMenu
-        if (id >= 100 && id < 200) {
+        if (id == R.id.Draw) {
+            Intent intent = new Intent(PresenterActivity.this,MainActivity.class);
+            PresenterActivity.this.startActivity(intent);            
+            return true;
+        }
+        
+        else if (id == R.id.Analysis) {
+            Intent intent = new Intent(PresenterActivity.this,AnalysisActivity.class);
+            PresenterActivity.this.startActivity(intent);            
+            return true;
+        }
+        
+        else if (id >= 100 && id < 200) {
             directory = id % 100;
             start = 0;
             return true;
@@ -127,7 +140,7 @@ public class PresenterActivity extends Activity {
         return directoryMenu;
     }
     
-    // function call for dynamic building. Takes both at the same time to save time
+    // function call for dynamic building. Takes all of them at the same time to save time
     public List<Menu> buildSubMenu(Menu startMenu, Menu endMenu, Menu indMenu){
         List<Menu> returnList = new ArrayList<Menu>();
         

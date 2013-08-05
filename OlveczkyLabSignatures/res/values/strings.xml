@@ -17,5 +17,7 @@
     <string name="title_activity_presentor">PresentorActivity</string>
     <string name="title_activity_presenter">PresenterActivity</string>
     <string name="title_activity_analysis">AnalysisActivity</string>
+    <string name="Draw">Draw</string>
+    <string name="Analysis">Analysis</string>
 
 </resources>
