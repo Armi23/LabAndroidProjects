@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
                 MainActivity.this.startActivity(intent);
                 return true;
             case R.id.Analysis:
-                // change view to analysis page
+                // change view to analysis page. This is to test change
                 intent = new Intent(MainActivity.this, AnalysisActivity.class);
                 MainActivity.this.startActivity(intent);
                 return true;
