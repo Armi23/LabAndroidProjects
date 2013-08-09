@@ -21,5 +21,7 @@
     <string name="Analysis">Analysis</string>
     <string name="button_XandTime">Plot X vs Time</string>
     <string name="button_YandTime">Plot Y vs time</string>
+    <string name="title_activity_presentation">PresentationActivity</string>
+    <string name="title_activity_utilities">Utilities</string>
 
 </resources>

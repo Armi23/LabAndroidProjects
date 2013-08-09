@@ -41,6 +41,14 @@
             android:name="com.lab.olveczkylabsignatures.AnalysisActivity"
             android:label="@string/title_activity_analysis" >
         </activity>
+        <activity
+            android:name="com.lab.olveczkylabsignatures.PresentationActivity"
+            android:label="@string/title_activity_presentation" >
+        </activity>
+        <activity
+            android:name="com.lab.olveczkylabsignatures.Utilities"
+            android:label="@string/title_activity_utilities" >
+        </activity>
     </application>
 
 </manifest>

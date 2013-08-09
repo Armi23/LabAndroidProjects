@@ -10,21 +10,45 @@
     tools:context=".AnalysisActivity" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button_plotXandTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="17dp"
+        android:onClick="graphXvsTime"
         android:text="@string/button_XandTime" />
 
     <Button
+        android:id="@+id/button_plotYandTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
+        android:layout_alignLeft="@+id/button_plotXandTime"
+        android:layout_below="@+id/button_plotXandTime"
         android:layout_marginTop="24dp"
         android:text="@string/button_YandTime" />
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+		<LinearLayout
+		    android:id="@+id/graph1"
+		    android:layout_width="280dp"
+		    android:layout_height="250dip"
+		    android:orientation="vertical" />
+
+	</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/graph2"
+        android:layout_width="501dp"
+        android:layout_height="250dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+    </LinearLayout>
 
 </RelativeLayout>
